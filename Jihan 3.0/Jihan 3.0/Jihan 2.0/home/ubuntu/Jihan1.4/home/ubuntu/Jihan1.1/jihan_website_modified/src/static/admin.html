@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پانێڵی بەڕێوەبەر - نوسینگەی جیهان</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Login Form -->
+        <div id="login-section" class="login-section">
+            <div class="login-card">
+                <div class="login-header">
+                    <img src="IMG_4687.PNG" alt="Logo" class="login-logo">
+                    <h1>پانێڵی بەڕێوەبەر</h1>
+                    <p>نوسینگەی جیهان بۆ گۆڕینی دراو</p>
+                </div>
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="username">ناوی بەکارهێنەر:</label>
+                        <input type="text" id="username" name="username" required placeholder="Admin">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">وشەی نهێنی:</label>
+                        <input type="password" id="password" name="password" required placeholder="password">
+                    </div>
+                    <button type="submit" class="login-btn">چوونە ژوورەوە</button>
+                </form>
+                <div id="login-error" class="error-message" style="display: none;"></div>
+
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+            <header class="admin-header">
+                <div class="header-left">
+                    <img src="IMG_4687.PNG" alt="Logo" class="header-logo">
+                    <div class="header-text">
+                        <h1>پانێڵی بەڕێوەبەر</h1>
+                        <span class="welcome-text">بەخێربێیت، <span id="admin-username"></span></span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="btn btn-secondary">گەڕانەوە بۆ ماڵپەڕ</a>
+                    <button id="logout-btn" class="btn btn-danger">دەرچوون</button>
+                </div>
+            </header>
+
+            <main class="admin-main">
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>کۆی دراوەکان</h3>
+                        <span id="total-currencies" class="stat-number">16</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>دوایین نوێکردنەوە</h3>
+                        <span id="last-update" class="stat-time">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>دۆخی سیستەم</h3>
+                        <span class="stat-status active">چالاک</span>
+                    </div>
+                </div>
+
+                <div class="rates-management">
+                    <div class="section-header">
+                        <h2>بەڕێوەبردنی نرخی دراو</h2>
+                        <button id="refresh-rates" class="btn btn-primary">نوێکردنەوەی هەموو نرخەکان</button>
+                    </div>
+                    
+                    <div class="rates-grid" id="rates-grid">
+                        <!-- Exchange rates will be loaded here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message-toast" class="message-toast" style="display: none;">
+        <span id="message-text"></span>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>تکایە چاوەڕێ بە...</p>
+    </div>
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  import { getFirestore, collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCY7WA6IK2qLbSz2wZNQR9KtLZe6jQ6WbU",
+    authDomain: "jihan-database.firebaseapp.com",
+    projectId: "jihan-database",
+    storageBucket: "jihan-database.firebasestorage.app",
+    messagingSenderId: "480029104794",
+    appId: "1:480029104794:web:37f34f71a96756461edd23",
+    measurementId: "G-5LLHZ5041H"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  window.firebase_db = db; // Make db accessible globally
+</script>
+    <script src="admin-script.js"></script>
+</body>
+</html>
+

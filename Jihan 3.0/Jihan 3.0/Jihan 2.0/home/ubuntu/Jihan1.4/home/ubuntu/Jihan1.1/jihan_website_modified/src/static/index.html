@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوسینگەی جیهان - Jihan Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header id="fixedHeader" class="fixed-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-container">
+                    <img src="IMG_4687.PNG" alt="نوسینگەی جیهان" class="header-logo" id="adminLogo">
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="date-time">
+                    <span id="currentDate">2025-07-09</span>
+                    <span id="currentTime">17:30:45</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <button class="lang-tab active" data-lang="ku">کوردی</button>
+                    <button class="lang-tab" data-lang="en">English</button>
+                    <button class="lang-tab" data-lang="ar">العربية</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <img src="IMG_4687.PNG" alt="نوسینگەی جیهان" class="main-logo">
+                <h1 class="site-title" data-translate="site_title">نوسینگەی جیهان</h1>
+                <p class="hero-subtitle" data-translate="services_text">هاوبەشی متمانەپێکراوتان بۆ خزمەتگوزاری گۆڕینی دراو</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="best-rates-icon.png" alt="Best Rates" class="feature-icon-img">
+                    </div>
+                    <h3 data-translate="best_rates">باشترین نرخی گۆڕین</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="secure-transactions-icon.png" alt="Secure Transactions" class="feature-icon-img">
+                    </div>
+                    <h3 data-translate="secure_transactions">مامەڵەی پارێزراو</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="fast-service-icon.png" alt="Fast Service" class="feature-icon-img">
+                    </div>
+                    <h3 data-translate="fast_service">خزمەتگوزاری خێرا</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exchange Rates Section -->
+        <section class="rates-section">
+            <div class="rates-header">
+                <h2 data-translate="exchange_rates">نرخی دراو</h2>
+                <button id="refreshBtnTop" class="refresh-btn" data-translate="refresh_rates">نوێکردنەوەی نرخەکان</button>
+            </div>
+            
+            <div class="rates-table">
+                <div class="rates-header-row">
+                    <div class="header-cell sell-header">
+                        <div class="multilingual-header">
+                            <span class="ku-text">دراو</span>
+                            <span class="en-text">CURRENCY</span>
+                            <span class="ar-text">العملة</span>
+                        </div>
+                    </div>
+                    <div class="header-cell buy-header">
+                        <div class="multilingual-header">
+                            <span class="ku-text">کڕین</span>
+                            <span class="en-text">BUY</span>
+                            <span class="ar-text">شراء</span>
+                        </div>
+                    </div>
+                    <div class="header-cell currency-header">
+                        <div class="multilingual-header">
+                            <span class="ku-text">فرۆشتن</span>
+                            <span class="en-text">Sell</span>
+                            <span class="ar-text">بيع</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="ratesContainer" class="rates-container">
+                    <!-- Exchange rates will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Methods Section -->
+        <section class="payment-section">
+            <h3 data-translate="payment_methods">ڕێگەکانی پارەدان:</h3>
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <img src="rafidain-bank-logo.jpg" alt="Rafidain Bank" class="payment-logo">
+                    <span>Bank Rafidain</span>
+                </div>
+                <div class="payment-method">
+                    <img src="fib-logo.png" alt="FIB" class="payment-logo">
+                    <span>FIB</span>
+                </div>
+                <div class="payment-method">
+                    <img src="fastpay-logo-pink.jpg" alt="Fastpay" class="payment-logo">
+                    <span>Fastpay</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <h3 data-translate="services_title">خزمەتگوزارییەکان</h3>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="money-exchange-icon.png" alt="Currency Exchange" class="service-icon-img">
+                    </div>
+                    <span data-translate="currency_exchange">گۆڕینی دراو</span>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="money-transfer-icon.png" alt="Money Transfer" class="service-icon-img">
+                    </div>
+                    <span data-translate="money_transfer">گواستنەوەی پارە</span>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="currency-exchange-icon.png" alt="Rate Advisory" class="service-icon-img">
+                    </div>
+                    <span data-translate="fast_exchange">ڕاوێژکاری نرخ</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-info">
+                <h3 data-translate="location">ناونیشان:</h3>
+                <p data-translate="location_text">تەق تەق، شەقامی گشتی، بەرامبەر کۆمیتە</p>
+                
+                <div class="phone-numbers">
+                    <h4 data-translate="mariwan">مەریوان:</h4>
+                    <p class="phone-number"><a href="tel:+9647504951842">0750 495 1842</a></p>
+                    <p class="phone-number"><a href="tel:+9647514590969">0751 459 0969</a></p>
+                    
+                    <h4 data-translate="hiwa">هیوا:</h4>
+                    <p class="phone-number"><a href="tel:+9647502242321">0750 224 2321</a></p>
+                    <p class="phone-number"><a href="tel:+9647502073852">0750 207 3852</a></p>
+
+                     <h4 data-translate="Mahamd">محمد:</h4>
+                    <p class="phone-number"><a href="tel:+96407750301414">0775 030 1414</a></p>
+                    
+                    <h4 data-translate="Ebo">ئیبۆ:</h4>
+                    <p class="phone-number"><a href="tel:+96407823679510">0782 367 9510</a></p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1RmKkSoE9Y/?mibextid=wwXIfr" target="_blank" class="social-link">
+                    <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://wa.me/96407502242321" target="_blank" class="social-link">
+                    <img src="whatsapp-icon.png" alt="WhatsApp" class="social-icon">
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://t.me/+9647823679510" target="_blank" class="social-link">
+                    <img src="telegram-icon.png" alt="Telegram" class="social-icon">
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p data-translate="copyright">© 2025 نوسینگەی جیهان - هەموو مافەکان پارێزراون</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
